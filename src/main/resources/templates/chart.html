@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AOPI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://unpkg.com/d3@3/d3.min.js"></script>
+    <script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<form method="POST" th:object="${dataResponse}">
+    <h2>Lagrange interpolation with JNA threads synchronization</h2>
+    <label>Sorted data:</label><br>
+    <table border="1">
+        <tr th:each="dataRow, i : ${sortedData}">
+            <td> <label th:text="${dataRow.abscissa}"></label>
+            </td>
+            <td> <label th:text="${dataRow.ordinate}"></label>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <span th:if="${function != null}">
+    <label>Function: </label>
+    <label th:text="${function}"></label>
+    </span><br>
+    <span th:unless="${function != null}">
+    <label>Error:</label>
+    <label th:text="${error}"></label>
+    </span><br>
+</form>
+<section>
+    <!-- Graph -->
+    <div id="chart"></div>
+</section>
+<script th:inline="javascript" th:if="${function != null}">
+/*<![CDATA[*/
+
+    var data = [[${function}]];
+    var scaling = [[${maxValue*1.5}]];
+
+    const chart = document.getElementById("chart");
+
+functionPlot({
+  target: "#chart",
+  title: "Calculation",
+  grid: true,
+  height: 500,
+  width: 900,
+  yAxis: { domain: [-scaling, scaling] },
+  xAxis: { domain: [-scaling, scaling] },
+  tip: {
+    renderer: function() {}
+  },
+  grid: true,
+  data: [
+    {
+      fn: data,
+      derivative: {
+        fn: data,
+        updateOnMouseMove: true
+      }
+    },
+  ]
+});
+
+/*]]>*/
+    </script>
+</body>
+</html>

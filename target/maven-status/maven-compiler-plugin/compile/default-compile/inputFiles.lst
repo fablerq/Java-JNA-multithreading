@@ -1,0 +1,13 @@
+D:\лабы\аопи\laba1\src\main\java\com\aopi\Application.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\controllers\JNIController.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\controllers\MainController.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\pipes\Pipe.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\models\dataRequest.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\threads\InterpolationThread.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\models\Coordinate.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\threads\SortingThread.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\pipes\PipeServer.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\threads\ReadFromFileThread.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\pipes\PipeClient.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\threads\WriteToFileThread.java
+D:\лабы\аопи\laba1\src\main\java\com\aopi\threads\CheckRepeatsThread.java

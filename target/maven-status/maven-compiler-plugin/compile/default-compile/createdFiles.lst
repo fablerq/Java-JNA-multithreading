@@ -1,0 +1,14 @@
+com\aopi\threads\InterpolationThread.class
+com\aopi\threads\ReadFromFileThread.class
+com\aopi\controllers\MainController$MorePsapi.class
+com\aopi\controllers\MainController.class
+com\aopi\controllers\MainController$PsApi.class
+com\aopi\threads\WriteToFileThread.class
+com\aopi\models\dataRequest.class
+com\aopi\threads\SortingThread.class
+com\aopi\threads\CheckRepeatsThread.class
+com\aopi\controllers\MainController$PsApi$PPROCESS_MEMORY_COUNTERS.class
+com\aopi\models\Coordinate.class
+com\aopi\controllers\MainController$User32.class
+com\aopi\Application.class
+com\aopi\controllers\MainController$MoreKernel32.class

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="aopi">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/src/main/java/com/aopi" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

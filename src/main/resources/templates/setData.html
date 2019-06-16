@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AOPI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<form method="POST" th:action="@{/handle}" th:object="${dataResponse}">
+    <h2>Lagrange interpolation with JNA threads synchronization</h2>
+    <label>Set data:</label><br>
+    <table border="1">
+      <tr th:each="coordinate, i : ${coordinates}">
+        <td> <input type="text" class="form-control" name="abscissas"
+                    th:value="${coordinate.abscissa}"
+                    pattern="[1-9\-]{1}[0-9\.]*$" required>
+        </td>
+        <td> <input  type="text" class="form-control" name="ordinates"
+                     th:value="${coordinate.ordinate}"
+                    pattern="[1-9\-]{1}[0-9\.]*$" required>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <label>Type of sync: mutex, events, pipes</label><br>
+    <input name="type" type="text" class="form-control" th:value="${type}"
+           placeholder="..." pattern="mutex|events|pipes|files" required>
+    <button name="record_data" type="submit" class="btn btn-primary">Next</button>
+</form>
+</body>
+</html>
